@@ -42,3 +42,6 @@ def get_cosine(vec1, vec2):
         return 0.0
     else:
         return float(numerator) / denominator
+
+
+# https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/

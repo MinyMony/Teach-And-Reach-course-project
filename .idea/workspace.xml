@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add first teacher filtering to match function">
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="    first cosine similarity try in match function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
@@ -84,7 +84,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1728473522643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="    first cosine similarity try in match function">
+      <option name="closed" value="true" />
+      <created>1728475830243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728475830243</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add functions file" />
     <MESSAGE value="add first teacher filtering to match function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add first teacher filtering to match function" />
+    <MESSAGE value="    first cosine similarity try in match function" />
+    <option name="LAST_COMMIT_MESSAGE" value="    first cosine similarity try in match function" />
   </component>
 </project>
