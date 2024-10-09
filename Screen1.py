@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 
 def create_opening_screen():
     pygame.display.set_caption('Teach an Reach')
-    screen.fill(consts.BORDER_COLOR)
+    screen.fill(consts.BACKGROUND_COLOR)
     pygame.display.flip()
 
     running = True
@@ -16,4 +16,4 @@ def create_opening_screen():
                 running = False
 
 
-
+create_opening_screen()
