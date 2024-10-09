@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add first teacher filtering to match function">
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add changing to tkinter screen">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screen1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +49,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.Screen1.executor": "Run",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -84,7 +89,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1728473522643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="add fontS to consts">
+      <option name="closed" value="true" />
+      <created>1728476156170</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728476156170</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="add changing to tkinter screen">
+      <option name="closed" value="true" />
+      <created>1728479520484</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728479520484</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="add changing to tkinter screen">
+      <option name="closed" value="true" />
+      <created>1728479713288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728479713288</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +130,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add functions file" />
     <MESSAGE value="add first teacher filtering to match function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add first teacher filtering to match function" />
+    <MESSAGE value="add fontS to consts" />
+    <MESSAGE value="add changing to tkinter screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="add changing to tkinter screen" />
   </component>
 </project>
