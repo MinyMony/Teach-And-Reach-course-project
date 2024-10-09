@@ -21,6 +21,9 @@ def create_opening_screen():
     pygame.display.flip()
     text_to_speech()
 
+
+
+
     running = True
     while running:
         for event in pygame.event.get():
