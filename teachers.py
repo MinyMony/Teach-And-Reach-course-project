@@ -1,5 +1,7 @@
 import pandas as pd
-
+import pygame
+import consts
+from Screen1 import screen
 
 # Creating a DataFrame for teachers
 teachers_data = {
@@ -31,9 +33,25 @@ teachers_df = pd.DataFrame(teachers_data)
 
 teachers_df.to_csv('teachers_data.csv', index=False)
 
-student_data = {
+
+def addTeachers(full_name, gender, subject, age_range, phone_number, short_explanation):
+    global teachers_df
+
+    new_teacher = pd.Series({
         'Full Name': full_name,
         'Gender': gender,
-        'Age': age,
         'Subject': subject,
+        'Age Range': age_range,
+        'Phone Number': phone_number,
         'Short Explanation': short_explanation
+    })
+
+    teachers_df = teachers_df.append(new_teacher, ignore_index=True)
+    teachers_df.to_csv('teachers_data.csv', index=False)
+
+my_screen = screen
+pygame.display.set_caption('Teach and Reach')
+my_screen.fill(consts.BACKGROUND_COLOR)
+pygame.display.flip()
+font = pygame.font.match_font('calibri', 32)
+text = font.render('The details you entered have been added to the database!', True, consts.BLACK)
