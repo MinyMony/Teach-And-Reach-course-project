@@ -2,7 +2,7 @@ import consts
 import gtts
 import time
 from tkinter import *
-import playsound3
+
 
 root = Tk()
 
