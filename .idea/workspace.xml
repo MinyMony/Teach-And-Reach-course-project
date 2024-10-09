@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add functions file">
-      <change beforePath="$PROJECT_DIR$/Screen1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/consts.py" afterDir="false" />
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add first teacher filtering to match function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/jbt/Downloads"
   }
 }]]></component>
@@ -77,7 +76,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1728470676510</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="add first teacher filtering to match function">
+      <option name="closed" value="true" />
+      <created>1728473522643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728473522643</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add functions file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add functions file" />
+    <MESSAGE value="add first teacher filtering to match function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add first teacher filtering to match function" />
   </component>
 </project>
