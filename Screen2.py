@@ -15,7 +15,7 @@ def student_screen():
 
 
 def create_second_screen():
-    pygame.display.set_caption('Teach an Reach')
+    pygame.display.set_caption('Teach and Reach')
     screen.fill(consts.BACKGROUND_COLOR)
     pygame.display.flip()
     running = True
