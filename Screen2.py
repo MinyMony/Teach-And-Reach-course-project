@@ -1,37 +1,28 @@
-import pygame
 import consts
-import tkinter
 from Screen1 import screen
+import tkinter as tk
+list=[]
 
-screen.fill(consts.BACKGROUND_COLOR)
-
-
-def teacher_screen():
-    pass
+list=["name","subject","gender","age", "description"]
 
 
-def student_screen():
-    pass
-
-
-def create_second_screen():
-    pygame.display.set_caption('Teach and Reach')
-    screen.fill(consts.BACKGROUND_COLOR)
-    pygame.display.flip()
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
+def text_box(text,ending_text):
+    window = tk.Tk()
+    window.geometry("300x300")
+    tk.Label(text=f"Enter {text}").pack()
+    tk.Entry().pack()
+    exit_button = tk.Button(window, text=ending_text, command=window.destroy)
+    exit_button.pack(pady=20)
+    window.mainloop()
 
 
 
 
-
-
-
-
-
-
+for i in range (5):
+    text=list[i]
+    if i!=4:
+        text_box(text,"Next")
+    else:
+        text_box(text, "Exit")
 
 
