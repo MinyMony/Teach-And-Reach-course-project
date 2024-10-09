@@ -21,7 +21,7 @@ def button_clicked():
 
 
 def create_button():
-    root = Tk()
+
     button = Button(root,
                     text="Student",
                     command=button_clicked,
@@ -47,21 +47,7 @@ def create_button():
 
     button.pack(padx=20, pady=20)
 
+create_button()
 
-text_to_speech()
 root.mainloop()
-# def create_opening_screen():
-#     pygame.display.set_caption('Teach and Reach')
-#     screen.fill(consts.BACKGROUND_COLOR)
-#     pygame.display.flip()
-#     text_to_speech()
-#     create_button()
-#
-#     running = True
-#     while running:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 running = False
 
-
-# pygame.font.SysFont('Calibri', 20))
