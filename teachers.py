@@ -1,7 +1,9 @@
 import pandas as pd
-import pygame
+import tkinter as tk
 import consts
 from Screen1 import screen
+import Screen1
+
 
 # Creating a DataFrame for teachers
 teachers_data = {
@@ -49,9 +51,40 @@ def addTeachers(full_name, gender, subject, age_range, phone_number, short_expla
     teachers_df = teachers_df.append(new_teacher, ignore_index=True)
     teachers_df.to_csv('teachers_data.csv', index=False)
 
-my_screen = screen
-pygame.display.set_caption('Teach and Reach')
-my_screen.fill(consts.BACKGROUND_COLOR)
-pygame.display.flip()
-font = pygame.font.match_font('calibri', 32)
-text = font.render('The details you entered have been added to the database!', True, consts.BLACK)
+
+root = tk.Tk()
+root.geometry("1500x950")
+root.title("Teach and Reach")
+
+
+text_var = tk.StringVar()
+text_var.set("The details you entered have been added to the database!")
+
+
+label = tk.Label(root,
+                 textvariable=text_var,
+                 anchor=tk.CENTER,
+                 bg="lightblue",
+                 height=40,
+                 width=60,
+                 bd=3,
+                 font=("calibri", 32, "bold"),
+                 cursor="hand2",
+                 fg="black",
+                 padx=15,
+                 pady=15,
+                 justify=tk.CENTER,
+                 relief=tk.RAISED,
+                 wraplength=250
+                )
+
+label.pack(pady=20)
+root.mainloop()
+
+student_data = {
+    'Full Name': full_name,
+    'Gender': gender,
+    'Age': age,
+    'Subject': subject,
+    'Short Explanation': short_explanation
+}
