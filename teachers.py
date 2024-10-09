@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 # Creating a DataFrame for teachers
 teachers_data = {
     'Full Name': ['Miriam Cohen', 'Yossi Levi', 'Dana Friedman', 'Oren Mizrahi', 'Shachar Rabinowitz',
@@ -27,3 +28,12 @@ teachers_data = {
 }
 
 teachers_df = pd.DataFrame(teachers_data)
+
+teachers_df.to_csv('teachers_data.csv', index=False)
+
+student_data = {
+        'Full Name': full_name,
+        'Gender': gender,
+        'Age': age,
+        'Subject': subject,
+        'Short Explanation': short_explanation

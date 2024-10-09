@@ -1,3 +1,10 @@
 import pygame
+import consts
+import tkinter
+from Screen1 import screen
 
-Screen=pygame.display.set_Mode()
+screen.fill(consts.BORDER_COLOR)
+
+
+
+
