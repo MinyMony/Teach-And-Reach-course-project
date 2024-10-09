@@ -1,5 +1,5 @@
 import pandas as pd
-
+import pygame
 
 # Creating a DataFrame for teachers
 teachers_data = {
@@ -31,9 +31,16 @@ teachers_df = pd.DataFrame(teachers_data)
 
 teachers_df.to_csv('teachers_data.csv', index=False)
 
-student_data = {
-        'Full Name': full_name,
-        'Gender': gender,
-        'Age': age,
-        'Subject': subject,
-        'Short Explanation': short_explanation
+def addTeachers(full_name, gender, subject, age_range, phone_number, short_explanation):
+    teachers_df['Full Name'].append(full_name)
+    teachers_df['Gender'].append(gender)
+    teachers_df['Subject'].append(subject)
+    teachers_df['Age Range'].append(age_range)
+    teachers_df['Phone Number'].append(phone_number)
+    teachers_df['Short Explanation'].append(short_explanation)
+    return teachers_df
+
+def screen_after_teacher():
+    pygame.display.set_caption('The details you entered have been added to the database!')
+    screen.fill(consts.BORDER_COLOR)
+    pygame.display.flip()
