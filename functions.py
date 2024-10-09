@@ -1,4 +1,3 @@
-import teachers
 import pandas as pd
 from teachers import teachers_df
 
@@ -10,3 +9,4 @@ def match_it(student):
     teachers_dt = teachers_dt[teachers_dt['subject'] == student['subject']]
     teachers_dt = teachers_dt[teachers_dt['age_range'].split('-')[0] <= student['age'] and teachers_dt['age_range'].split('-')[1] >= student['age']]
 
+    # by the description decide the most fitting teacher
