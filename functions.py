@@ -4,6 +4,7 @@ import nltk
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
+
 def train_model():
     sentences = ["I ate dinner.", "We had a three-course meal.", "Brad came to dinner with us.", "He loves fish tacos.",
                  "In the end, we all felt like we ate too much.", "We all agreed; it was a magnificent evening."]
@@ -19,6 +20,7 @@ def train_model():
     model = Doc2Vec(tagged_data, vector_size=20, window=2, min_count=1, epochs=100)
 
     return model
+
 
 # student has name, age, subject, gender, description
 # teacher has name, age_range, gender, phone_num, description
@@ -80,6 +82,7 @@ def match_teacher(student):
 def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
+
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
@@ -87,4 +90,4 @@ def create_student(name, age, subject, gender, description):
 
 
 student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
-print (match_teacher(student1))
+print(match_teacher(student1))
