@@ -8,21 +8,25 @@ student_data = {
     'Subject': 0,
     'Short Explanation': 0
 }
-
-
-
-
-
+window = tk.Tk()
+window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+window.configure(background='lightblue')
 def on_submit(window, input):
     print(input.get())
-    window.destroy()
+window.destroy()
+
+
+
+
+
+
+
+
 
 
 
 def text_box(dict):
-    window = tk.Tk()
-    window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-    window.configure(background='lightblue')
+
 
     for key in dict:
         tk.Label(text=f"Enter {key}", font=('Calibri',25),bg='lightblue').pack()
