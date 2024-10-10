@@ -1,6 +1,7 @@
 import sys
 import teachers
 import nltk
+nltk.download('punkt_tab')
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
@@ -39,11 +40,12 @@ def match_teacher(student):
 
     # Apply the mask to filter teachers_dt
     teachers_dt = teachers_dt[mask]
-
+    teachers_descriptions = [str(desc) for desc in teachers_dt['Short Explanation']]
+    student_description = str(student['Short Explanation'])
     # by the description decide the most fitting teacher
     # first tokenise all the descriptions
-    tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_dt['Short Explanation']]
-    tokenized_student_description = nltk.word_tokenize(student['Short Explanation'])  # sentence vector
+    tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_descriptions]
+    tokenized_student_description = nltk.word_tokenize(student_description)  # sentence vector
 
     ## Train doc2vec model
     model = train_model()
@@ -63,7 +65,8 @@ def match_teacher(student):
             min_cosine_similarity = cosine_similarity
             teacher_match_index = vector_i
 
-    return teachers_dt[teacher_match_index]
+    print(student_description)
+    print(teachers_descriptions[teacher_match_index])
 
 
 # def get_cosine(vec1, vec2):
