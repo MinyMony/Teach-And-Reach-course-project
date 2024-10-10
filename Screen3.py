@@ -27,9 +27,10 @@ def create_teacher_text(window):
 
 def on_submit(input_name, input_gender, input_subject, input_age_range, input_phone_number, input_short_explanation,
               window):
+    window.destroy()
     teachers.addTeacher(input_name, input_gender, input_subject, input_age_range, input_phone_number,
                         input_short_explanation)
-    window.destroy()
+
 
 
 def create_teacher_screen():
