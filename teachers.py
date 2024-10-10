@@ -57,7 +57,6 @@ def apply_data(teachers_df):
 
 def create_confirmation_text(root):
     text_var = StringVar()
-
     text_var.set("The details you entered have been added to the database!")
     label = Label(root,
                   textvariable=text_var,
@@ -65,7 +64,7 @@ def create_confirmation_text(root):
                   height=40,
                   width=60,
                   bd=3,
-                  background = 'lightblue',
+                  background='lightblue',
                   font=("calibri", 32, "bold"),
                   cursor="hand2",
                   fg="black",
@@ -75,7 +74,6 @@ def create_confirmation_text(root):
                   relief=RAISED,
                   wraplength=250
                   )
-
 
     label.pack(pady=20)
 
