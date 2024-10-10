@@ -6,8 +6,9 @@ import teachers
 teachers_data = ['Full Name','Gender','Subject','Age Range', 'Phone Number','Short Explanation']
 
 def on_submit(input_name, input_gender, input_subject, input_age_range, input_phone_number,input_short_explanation, window):
-    teachers.addTeacher(input_name,input_gender,input_subject,input_age_range,input_phone_number,input_short_explanation)
     window.destroy()
+    teachers.addTeacher(input_name,input_gender,input_subject,input_age_range,input_phone_number,input_short_explanation)
+
 
 
 def create_teacher_screen():
@@ -21,7 +22,7 @@ def create_teacher_screen():
     tk.Label(text=f"Enter {teachers_data[0]}", font=('Calibri', 20), background='lightblue').pack()
     input_name = tk.Entry(window, textvariable=name_str)
     input_name.pack()
-    
+
 
     gender_str = tk.StringVar()
     input_gender = ttk.Combobox(window, textvariable=gender_str)
