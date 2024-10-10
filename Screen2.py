@@ -10,6 +10,7 @@ student_data = {
     'Short Explanation': 0
 }
 
+
 key_values = list(student_data.keys())
 
 
@@ -44,9 +45,15 @@ def create_student_screen():
     input_age.pack()
 
     subject_str = tk.StringVar()
+    input_subject = ttk.Combobox(window, textvariable=subject_str)
+    input_subject['values'] = ('Math',
+                              'Science', 'Literature','History','Geography','Art','Music','Physics','Chemistry','Geography')
     tk.Label(text=f"Enter {key_values[3]}", font=('Calibri', 20), background='lightblue').pack()
-    input_subject = tk.Entry(window, textvariable=subject_str)
+    # input_gender = tk.Entry(window, textvariable=gender_str)
     input_subject.pack()
+    # tk.Label(text=f"Enter {key_values[3]}", font=('Calibri', 20), background='lightblue').pack()
+    # input_subject = tk.Entry(window, textvariable=subject_str)
+    # input_subject.pack()
 
     short_explanation_str = tk.StringVar()
     tk.Label(text=f"Enter {key_values[4]}", font=('Calibri', 20), background='lightblue', ).pack()

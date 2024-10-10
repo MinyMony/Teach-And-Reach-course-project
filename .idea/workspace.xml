@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="fix main">
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="fix match teacher function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screen1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/teachers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachers_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/teachers_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -62,7 +64,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.functions">
     <configuration name="Screen1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Teach-And-Reach" />
       <option name="ENV_FILES" value="" />
@@ -118,6 +120,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Teach-And-Reach)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -229,15 +232,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728552095277</updated>
     </task>
-    <task id="LOCAL‎-00010" summary="fix main">
+    <task id="LOCAL-00010" summary="update match system">
       <option name="closed" value="true" />
-      <created>1728556330806</created>
+      <created>1728554679773</created>
       <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL‎-00010" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1728556330806</updated>
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728554679773</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix match teacher function">
+      <option name="closed" value="true" />
+      <created>1728556549906</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728556549906</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,10 +272,22 @@
     <MESSAGE value="add create student function" />
     <MESSAGE value="add changing to tkinter screen" />
     <MESSAGE value="fix filtering in functions" />
-    <MESSAGE value="fix main" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix main" />
+    <MESSAGE value="update match system" />
+    <MESSAGE value="fix match teacher function" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix match teacher function" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/functions.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Teach_And_Reach$functions.coverage" NAME="functions Coverage Results" MODIFIED="1728552761894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Teach_And_Reach$functions.coverage" NAME="functions Coverage Results" MODIFIED="1728556921240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
