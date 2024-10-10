@@ -17,11 +17,11 @@ window.geometry("300x300")
 
 name_str = tk.StringVar()
 gender_str=tk.StringVar()
-age_str=tk.StringVar()
+age=tk.IntingVar()
 subject=tk.StringVar()
 short_version=tk.StringVar()
 
-str_list=[name_str,gender_str,age_str,subject,short_version]
+str_list=[name_str,gender_str,age,subject,short_version]
 
 def on_submit():
     print(name_str.get())
@@ -32,7 +32,7 @@ def on_submit():
 def text_box(dict):
 
 
-    for i in range(dict):
+    for key in dict:
         print(dict[i])
         tk.Label(text=f"Enter {dict[i]}").pack()
         input = tk.Entry(window, textvariable=name_str)
