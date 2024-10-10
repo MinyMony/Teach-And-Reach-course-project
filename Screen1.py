@@ -9,7 +9,7 @@ def teacher_clicked():
 
 def student_clicked(root):
     root.destroy()
-    Screen2.create_screen_2()
+    Screen2.create_student_screen()
 
 
 
