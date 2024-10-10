@@ -45,7 +45,7 @@ def create_student_screen():
     input_age.pack()
 
     subject_str = tk.StringVar()
-    input_subject = ttk.Combobox(window, textvariable=gender_str)
+    input_subject = ttk.Combobox(window, textvariable=subject_str)
     input_subject['values'] = ('Math',
                               'Science', 'Literature','History','Geography','Art','Music','Physics','Chemistry','Geography')
     tk.Label(text=f"Enter {key_values[3]}", font=('Calibri', 20), background='lightblue').pack()
