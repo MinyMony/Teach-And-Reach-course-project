@@ -17,7 +17,7 @@ window.geometry("300x300")
 
 name_str = tk.StringVar()
 gender_str=tk.StringVar()
-age=tk.IntingVar()
+age=tk.StringVar()
 subject=tk.StringVar()
 short_version=tk.StringVar()
 
@@ -28,13 +28,11 @@ def on_submit():
     window.destroy()
 
 
+i=0
 
 def text_box(dict):
 
-
-    for key in dict:
-        print(dict[i])
-        tk.Label(text=f"Enter {dict[i]}").pack()
+        tk.Label(text=f"Enter {key}").pack()
         input = tk.Entry(window, textvariable=name_str)
         input.pack()
     exit_button = tk.Button(window, text="Submit", command=(lambda :on_submit()))
