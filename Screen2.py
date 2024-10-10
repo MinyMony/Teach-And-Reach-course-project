@@ -1,5 +1,5 @@
 from numpy.version import short_version
-
+from tkinter import ttk
 import consts
 import tkinter as tk
 
@@ -25,33 +25,32 @@ def on_submit(input_name,input_gender,input_age,input_subject,input_short_explan
     window.destroy()
 
 
-gender_str = tk.StringVar()
-age = tk.IntVar()
-subject = tk.StringVar()
-short_version = tk.StringVar()
-
 name_str = tk.StringVar()
-tk.Label(text=f"Enter {key_values[0]}").pack()
+tk.Label(text=f"Enter {key_values[0]}",font=('Calibri',20),background='lightblue').pack()
 input_name = tk.Entry(window, textvariable=name_str)
 input_name.pack()
 
 gender_str = tk.StringVar()
-tk.Label(text=f"Enter {key_values[1]}").pack()
-input_gender = tk.Entry(window, textvariable=gender_str)
+input_gender = ttk.Combobox(window, textvariable=gender_str)
+input_gender['values'] = ('Female',
+                          'Male', 'Non-Binary')
+tk.Label(text=f"Enter {key_values[1]}",font=('Calibri',20),background='lightblue').pack()
+# input_gender = tk.Entry(window, textvariable=gender_str)
 input_gender.pack()
 
 age_int = tk.IntVar()
-tk.Label(text=f"Enter {key_values[2]}").pack()
+tk.Label(text=f"Enter {key_values[2]}",font=('Calibri',20),background='lightblue').pack()
 input_age = tk.Entry(window, textvariable=age_int)
 input_age.pack()
 
 subject_str = tk.StringVar()
-tk.Label(text=f"Enter {key_values[3]}").pack()
+tk.Label(text=f"Enter {key_values[3]}",font=('Calibri',20),background='lightblue').pack()
 input_subject = tk.Entry(window, textvariable=subject_str)
 input_subject.pack()
 
+
 short_explanation_str = tk.StringVar()
-tk.Label(text=f"Enter {key_values[4]}").pack()
+tk.Label(text=f"Enter {key_values[4]}",font=('Calibri',20),background='lightblue',).pack()
 input_short_explanation = tk.Entry(window, textvariable=short_explanation_str)
 input_short_explanation.pack()
 
