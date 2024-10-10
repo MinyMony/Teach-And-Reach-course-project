@@ -21,6 +21,8 @@ def on_submit(input_name, input_gender, input_age, input_subject, input_short_ex
     window.destroy()
 
 
+
+
 def create_student_screen():
     window = tk.Tk()
     window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
@@ -49,10 +51,8 @@ def create_student_screen():
     input_subject['values'] = ('Math',
                               'Science', 'Literature','History','Geography','Art','Music','Physics','Chemistry','Geography')
     tk.Label(text=f"Enter {key_values[3]}", font=('Calibri', 20), background='lightblue').pack()
-    # input_gender = tk.Entry(window, textvariable=gender_str)
-    input_subject.pack()
-    # tk.Label(text=f"Enter {key_values[3]}", font=('Calibri', 20), background='lightblue').pack()
     # input_subject = tk.Entry(window, textvariable=subject_str)
+    input_subject.pack()
     # input_subject.pack()
 
     short_explanation_str = tk.StringVar()
@@ -65,6 +65,5 @@ def create_student_screen():
                                                        input_subject.get(), input_short_explanation.get(), window)))
     exit_button.pack(pady=20)
     window.mainloop()
-
-
+    print(student_data)
 

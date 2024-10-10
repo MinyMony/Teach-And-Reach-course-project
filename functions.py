@@ -1,9 +1,5 @@
-import sys
 import teachers
-import nltk
-nltk.download('punkt_tab')
 import numpy as np
-from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from sentence_transformers import SentenceTransformer
 sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
@@ -46,59 +42,40 @@ def match_teacher(student):
     teachers_descriptions = [str(desc) for desc in teachers_dt['Short Explanation']]
     student_description = str(student['Short Explanation'])
 
-    # now match the best teacher for the student based on the short explanation
-    # first tokenise all the descriptions
-    tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_descriptions]
-    tokenized_student_description = nltk.word_tokenize(student_description)  # sentence vector
-
-    ## Train doc2vec model
-    model = train_model()
-
-    # transform sentence tokens to vectors using the model
-    vectorized_teachers_description = [model.infer_vector(tokenized_sent) for tokenized_sent in tokenized_teacher_descriptions]
-    vectorized_student_description = model.infer_vector(tokenized_student_description)
+    vectorized_teachers_descriptions = [sbert_model.encode(desc) for desc in teachers_descriptions]
+    vectorized_student_description = sbert_model.encode(student_description)
 
     # resetting parameters
-    min_cosine_similarity = sys.maxsize
+    min_cosine_similarity = -1
     teacher_match_index = -1
 
     # find the closest vectors
-    for vector_i in range(len(vectorized_teachers_description)):
-        cosine_similarity = cosine(vectorized_teachers_description[vector_i], vectorized_student_description)
-        if cosine_similarity < min_cosine_similarity:
+    for vector_i in range(len(vectorized_teachers_descriptions)):
+        cosine_similarity = cosine(vectorized_student_description, vectorized_teachers_descriptions[vector_i])
+        if cosine_similarity > min_cosine_similarity:
             min_cosine_similarity = cosine_similarity
             teacher_match_index = vector_i
 
     if teacher_match_index != -1:
         print(student)
-        print(teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]])
+        matched_teacher = teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]].head(2)
+        return matched_teacher
+
     else:
         print('could not match teacher')
+        return None
 
-
-
-# def get_cosine(vec1, vec2):
-#     intersection = set(vec1.keys()) & set(vec2.keys())
-#     numerator = sum([vec1[x] * vec2[x] for x in intersection])
-#
-#     sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
-#     sum2 = sum([vec2[x] ** 2 for x in list(vec2.keys())])
-#     denominator = math.sqrt(sum1) * math.sqrt(sum2)
-#
-#     if not denominator:
-#         return 0.0
-#     else:
-#         return float(numerator) / denominator
 
 def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
-
-# https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
     return student
 
+# student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
+#                           description='struggles with geometry and functions')
+# print(match_teacher(student1))
 
-student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male', description='struggles with geometry and functions')
-match_teacher(student1)
+# https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
+# it works yippie
