@@ -23,7 +23,7 @@ def train_model():
 
 # student has name, age, subject, gender, description
 # teacher has name, age_range, gender, phone_num, description
-def match_student(student):
+def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers_df.copy()
     teachers_dt = teachers_dt[teachers_dt['subject'] == student['subject']]
@@ -78,3 +78,6 @@ def cosine(u, v):
 def create_student(name, age, subject, gender, description):
     student = {'name': name, 'age': age, 'subject': subject, 'gender': gender, 'description': description}
     return student
+
+student = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
+print (match_teacher(student))
