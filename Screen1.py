@@ -9,10 +9,10 @@ import playsound3
 #     tts.save('Welcome.mp3')
 #     playsound3.playsound("Welcome.mp3")
 
-isTeacher = False
+is_Teacher = False
 
 
-def teacher_clicked():
+def teacher_clicked(is_Teacher):
     return True
 
 
@@ -35,12 +35,12 @@ def create_teacher_button(root):
                     highlightthickness=2,
                     justify="center",
                     overrelief="raised",
-                    padx=10,
-                    pady=20,
-                    width=15,
+                    padx=20,
+                    pady=30,
+                    width=20,
                     wraplength=100)
 
-    button.pack(padx=100, pady=100)
+    button.pack(padx=100, pady=70)
 
 
 def create_student_button(root):
@@ -62,9 +62,10 @@ def create_student_button(root):
                     highlightthickness=2,
                     justify="center",
                     overrelief="raised",
-                    padx=10,
-                    pady=15,
-                    width=15,
+                    padx=20,
+                    pady=30,
+                    width=20,
                     wraplength=100)
 
-    button.pack(padx=100, pady=100)
+    button.pack(padx=100, pady=70)
+
