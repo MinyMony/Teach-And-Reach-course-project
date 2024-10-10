@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="fix all">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screen2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screen3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen3.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="fix screens" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -276,7 +272,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1728560536135</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎-00015" summary="fix screens">
+      <option name="closed" value="true" />
+      <created>1728561438679</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1728561438679</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +305,8 @@
     <MESSAGE value="fix filtering in functions" />
     <MESSAGE value="add changing to tkinter screen" />
     <MESSAGE value="fix all" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix all" />
+    <MESSAGE value="fix screens" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix screens" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teach_And_Reach$functions.coverage" NAME="functions Coverage Results" MODIFIED="1728552761894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
