@@ -8,7 +8,7 @@ sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers.load_data()
-    print(teachers_dt)
+    # print(teachers_dt)
 
     # filter the DataFrame
     mask = (
@@ -20,7 +20,7 @@ def match_teacher(student):
 
     # Apply the mask to filter teachers_dt
     teachers_dt = teachers_dt[mask]
-    print(teachers_dt)
+    # print(teachers_dt)
 
     teachers_descriptions = [str(desc) for desc in teachers_dt['Short Explanation']]
     student_description = str(student['Short Explanation'])
@@ -40,7 +40,7 @@ def match_teacher(student):
             teacher_match_index = vector_i
 
     if teacher_match_index != -1:
-        print(student)
+        # print(student)
         matched_teacher = teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]]
         return create_teacher(matched_teacher)
 
@@ -53,9 +53,9 @@ def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
 
-def create_student(name, age, subject, gender, description):
-    student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
-    return student
+# def create_student(name, age, subject, gender, description):
+#     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
+#     return student
 
 
 # teacher has name, age_range, gender, phone_num, description
