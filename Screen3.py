@@ -3,18 +3,42 @@ import consts
 import tkinter as tk
 import teachers
 
-teachers_data = ['Full Name','Gender','Subject','Age Range', 'Phone Number','Short Explanation']
+teachers_data = ['Full Name', 'Gender', 'Subject', 'Age Range', 'Phone Number', 'Short Explanation']
 
-def on_submit(input_name, input_gender, input_subject, input_age_range, input_phone_number,input_short_explanation, window):
-    teachers.addTeacher(input_name,input_gender,input_subject,input_age_range,input_phone_number,input_short_explanation)
+
+def create_teacher_text(window):
+    text_var = tk.StringVar()
+    text_var.set("Hello Teacher! Enter your information")
+    label = tk.Label(window,
+                     textvariable=text_var,
+                     height=4,
+                     width=80,
+                     bd=1,
+                     background='lightblue',
+                     font=("Calibri", 30, "bold"),
+                     fg="black",
+                     padx=2,
+                     pady=2,
+                     wraplength=250
+                     )
+
+    label.pack(pady=2)
+
+
+def on_submit(input_name, input_gender, input_subject, input_age_range, input_phone_number, input_short_explanation,
+              window):
     window.destroy()
+    teachers.addTeacher(input_name, input_gender, input_subject, input_age_range, input_phone_number,
+                        input_short_explanation)
+
 
 
 def create_teacher_screen():
     window = tk.Tk()
     window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     window.configure(background='lightblue')
-    window.title("Teachers Window")
+    window.title('Teach and Reach')
+    create_teacher_text(window)
 
     name_str = tk.StringVar()
     tk.Label(text=f"Enter {teachers_data[0]}", font=('Calibri', 20), background='lightblue').pack()
@@ -55,14 +79,8 @@ def create_teacher_screen():
 
     exit_button = tk.Button(window, text="Submit",
                             command=(lambda: on_submit(input_name.get(), input_gender.get(), input_subject.get(),
-                                                       input_age_range.get(), input_phone_number.get(),input_short_explanation.get(),
+                                                       input_age_range.get(), input_phone_number.get(),
+                                                       input_short_explanation.get(),
                                                        window)))
     exit_button.pack(pady=20)
     window.mainloop()
-
-create_teacher_screen()
-
-
-
-
-
