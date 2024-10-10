@@ -12,7 +12,7 @@ student_data = {
 
 def text_box(dict):
     window = tk.Tk()
-    window.geometry("300x300")
+    window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     for key in dict:
         tk.Label(text=f"Enter {key}").pack()
         tk.Entry().pack()
