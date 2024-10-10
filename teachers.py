@@ -1,13 +1,10 @@
 import pandas as pd
 from tkinter import *
 import consts
-import Screen1
-teachers_df = pd.DataFrame()
-root = Tk()
 
-root.title('Teach and Reach')
-root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-root.configure(background='lightblue')
+teachers_df = pd.DataFrame()
+
+
 # Creating a DataFrame for teachers
 # teachers_data = {
 #     'Full Name': ['Miriam Cohen', 'Yossi Levi', 'Dana Friedman', 'Oren Mizrahi', 'Shachar Rabinowitz',
@@ -50,7 +47,7 @@ def addTeacher(full_name, gender, subject, age_range, phone_number, short_explan
 
 
 def load_data():
-    teachers_df = pd.read_csv('teachers_data.csv')
+    teachers_df = pd.DataFrame('teachers_data.csv')
     return teachers_df
 
 
@@ -58,30 +55,31 @@ def apply_data(teachers_df):
     teachers_df.to_csv('teachers_data.csv', index=False)
 
 
-text_var = StringVar()
-text_var.set("The details you entered have been added to the database!")
-
-
-def create_confirmation_text():
+def create_confirmation_text(root):
+    text_var = StringVar()
+    text_var.set("The details you entered have been added to the database!")
     label = Label(root,
-                     textvariable=text_var,
-                     anchor=CENTER,
-                     height=40,
-                     width=60,
-                     bd=3,
-                     font=("calibri", 32, "bold"),
-                     cursor="hand2",
-                     fg="black",
-                     padx=15,
-                     pady=15,
-                     justify=CENTER,
-                     relief=RAISED,
-                     wraplength=250
-                     )
+                  textvariable=text_var,
+                  anchor=CENTER,
+                  height=10,
+                  width=100,
+                  bd=1,
+                  background='lightblue',
+                  font=("calibri", 40, "bold"),
+                  fg="black",
+                  padx=10,
+                  pady=1,
+                  wraplength=400
+                  )
 
-    label.pack(pady=20)
+    label.pack(pady=1)
+
+
+def create_confirmation_screen():
+    root = Tk()
+    root.title('Teach and Reach')
+    root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+    root.configure(background='lightblue')
+    create_confirmation_text(root)
+
     root.mainloop()
-
-
-
-create_confirmation_text()
