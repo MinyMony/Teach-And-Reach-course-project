@@ -16,6 +16,7 @@ def create_teacher_screen():
     window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     window.configure(background='lightblue')
     window.title("Teachers Window")
+    
 
 
     name_str = tk.StringVar()
