@@ -83,10 +83,10 @@ def create_confirmation_text():
     label.pack(pady=20)
     root.mainloop()
 
-# student_data = {
-#     'Full Name': full_name,
-#     'Gender': gender,
-#     'Age': age,
-#     'Subject': subject,
-#     'Short Explanation': short_explanation
-# }
+student_data = {
+    'Full Name':0,
+    'Gender': 0,
+    'Age': 0,
+    'Subject': 0,
+    'Short Explanation': 0
+}
