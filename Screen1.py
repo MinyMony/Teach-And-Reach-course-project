@@ -1,11 +1,12 @@
 import consts
 from tkinter import *
 import Screen2
+import Screen3
 
 
 def teacher_clicked(root):
     root.destroy()
-    pass
+    Screen3.create_teacher_screen()
 
 
 def student_clicked(root):

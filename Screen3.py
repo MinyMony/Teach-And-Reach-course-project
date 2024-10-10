@@ -65,7 +65,6 @@ def create_teacher_screen():
     window.mainloop()
 
 
-create_teacher_screen()
-print(teachers_data)
+
 
 
