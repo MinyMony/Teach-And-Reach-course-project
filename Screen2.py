@@ -1,7 +1,8 @@
 import consts
 import tkinter as tk
+
 student_data = {
-    'Full Name':0,
+    'Full Name': 0,
     'Gender': 0,
     'Age': 0,
     'Subject': 0,
@@ -10,25 +11,37 @@ student_data = {
 
 
 
+
+
+def on_submit(window, input):
+    print(input.get())
+    window.destroy()
+
+
+
 def text_box(dict):
     window = tk.Tk()
     window.geometry("300x300")
+
     for key in dict:
         tk.Label(text=f"Enter {key}").pack()
-        data= tk.StringVar()
-        input=tk.Entry(window)
-    exit_button = tk.Button(window, text="Submit", command=window.destroy)
+        input = tk.Entry(window)
+        input.pack()
+    exit_button = tk.Button(window, text="Submit", command=(lambda :on_submit(window, input)))
     exit_button.pack(pady=20)
     window.mainloop()
 
 
-
-
-
-
-
-
+#
+# window = tk.Tk()
+# window.geometry("300x300")
+#
+# tk.Label(text=f"Enter Full Name").pack()
+# input = tk.Entry(window)
+# input.grid_bbox(row=1,column=0)
+# exit_button = tk.Button(window, text="Submit", command=on_submit(window, input))
+# exit_button.pack(pady=20)
+# print(input.get())
+#
+# window.mainloop()
 text_box(student_data)
-
-
-
