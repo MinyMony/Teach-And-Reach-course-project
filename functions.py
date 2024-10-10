@@ -4,8 +4,8 @@ import nltk
 nltk.download('punkt_tab')
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-# from sentence_transformers import SentenceTransformer
-# sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
+from sentence_transformers import SentenceTransformer
+sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 
 def train_model():
