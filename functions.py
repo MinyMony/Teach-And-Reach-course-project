@@ -1,6 +1,7 @@
 import teachers
 import numpy as np
 from sentence_transformers import SentenceTransformer
+
 sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 
@@ -58,8 +59,8 @@ def match_teacher(student):
 
     if teacher_match_index != -1:
         print(student)
-        matched_teacher = teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]].head(2)
-        return matched_teacher
+        matched_teacher = teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]]
+        return create_teacher(matched_teacher)
 
     else:
         print('could not match teacher')
@@ -69,13 +70,25 @@ def match_teacher(student):
 def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
+
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
     return student
 
-# student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
-#                           description='struggles with geometry and functions')
-# print(match_teacher(student1))
+
+# teacher has name, age_range, gender, phone_num, description
+def create_teacher(teacher_df):
+    name = teacher_df.head(1)['Name']
+    age_range = teacher_df.head(1)['Age Range']
+    gender = teacher_df.head(1)['Gender']
+    phone_number = teacher_df.head(1)['Phone Number']
+    description = teacher_df.head(1)['Short Explanation']
+
+    return {name, age_range, gender, phone_number, description}
+
+
+student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
+                          description='struggles with geometry and functions')
+print(match_teacher(student1))
 
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
-# it works yippie
