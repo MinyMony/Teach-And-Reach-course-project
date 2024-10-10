@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add changing to tkinter screen">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add changing to tkinter screen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,12 +26,12 @@
     &quot;assignee&quot;: &quot;MinyMony&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mayayerushalmi/Teach-And-Reach.git",
-    "accountId": "b0591480-c4d3-469d-95b8-c53cf2bcd4d1"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mayayerushalmi/Teach-And-Reach.git&quot;,
+    &quot;accountId&quot;: &quot;b0591480-c4d3-469d-95b8-c53cf2bcd4d1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -47,6 +44,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python.Screen1.executor": "Run",
+    "Python.Screen2.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -165,6 +163,7 @@
     <MESSAGE value="add first teacher filtering to match function" />
     <MESSAGE value="add fontS to consts" />
     <MESSAGE value="add changing to tkinter screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="add changing to tkinter screen" />
+    <MESSAGE value="leshachar" />
+    <option name="LAST_COMMIT_MESSAGE" value="leshachar" />
   </component>
 </project>
