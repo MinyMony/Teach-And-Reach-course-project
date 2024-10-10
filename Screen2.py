@@ -1,6 +1,13 @@
 import consts
 import tkinter as tk
-import teachers
+student_data = {
+    'Full Name':0,
+    'Gender': 0,
+    'Age': 0,
+    'Subject': 0,
+    'Short Explanation': 0
+}
+
 
 
 def text_box(dict):
@@ -19,7 +26,7 @@ def text_box(dict):
 
 
 
-text_box(teachers.student_data)
+text_box(student_data)
 
 
 

@@ -1,14 +1,10 @@
 import pandas as pd
-from tkinter import *
+import tkinter as tk
 import consts
+from Screen1 import root
 import Screen1
 
-teachers_df = pd.DataFrame
-root = Tk()
 
-root.title('Teach and Reach')
-root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-root.configure(background='lightblue')
 # Creating a DataFrame for teachers
 # teachers_data = {
 #     'Full Name': ['Miriam Cohen', 'Yossi Levi', 'Dana Friedman', 'Oren Mizrahi', 'Shachar Rabinowitz',
@@ -59,14 +55,18 @@ def apply_data(teachers_df):
     teachers_df.to_csv('teachers_data.csv', index=False)
 
 
-text_var = StringVar()
+# root = tk.Tk()
+# root.geometry("1500x950")
+# root.title("Teach and Reach")
+root.destroy()
+text_var = tk.StringVar()
 text_var.set("The details you entered have been added to the database!")
 
 
 def create_confirmation_text():
-    label = Label(root,
+    label = tk.Label(root,
                      textvariable=text_var,
-                     anchor=CENTER,
+                     anchor=tk.CENTER,
                      height=40,
                      width=60,
                      bd=3,
@@ -75,20 +75,18 @@ def create_confirmation_text():
                      fg="black",
                      padx=15,
                      pady=15,
-                     justify=CENTER,
-                     relief=RAISED,
+                     justify=tk.CENTER,
+                     relief=tk.RAISED,
                      wraplength=250
                      )
 
     label.pack(pady=20)
     root.mainloop()
 
-# student_data = {
-#     'Full Name': full_name,
-#     'Gender': gender,
-#     'Age': age,
-#     'Subject': subject,
-#     'Short Explanation': short_explanation
-# }
-
-create_confirmation_text()
+student_data = {
+    'Full Name':0,
+    'Gender': 0,
+    'Age': 0,
+    'Subject': 0,
+    'Short Explanation': 0
+}
