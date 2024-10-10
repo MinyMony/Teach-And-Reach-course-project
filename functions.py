@@ -88,4 +88,3 @@ student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='M
 print(match_teacher(student1))
 
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
-# it works yippie
