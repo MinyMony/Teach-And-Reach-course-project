@@ -13,3 +13,5 @@ Screen1.create_student_button(root)
 Screen1.create_teacher_button(root)
 
 root.mainloop()
+
+Screen1.create_screen_1(root)

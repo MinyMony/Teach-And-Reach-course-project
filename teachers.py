@@ -80,8 +80,7 @@ def create_confirmation_text():
                      )
 
     label.pack(pady=20)
-    root.mainloop()
-
-
 
 create_confirmation_text()
+
+
