@@ -78,17 +78,21 @@ def create_student(name, age, subject, gender, description):
 
 # teacher has name, age_range, gender, phone_num, description
 def create_teacher(teacher_df):
-    name = teacher_df.head(1)['Name']
-    age_range = teacher_df.head(1)['Age Range']
-    gender = teacher_df.head(1)['Gender']
-    phone_number = teacher_df.head(1)['Phone Number']
-    description = teacher_df.head(1)['Short Explanation']
+    # Get the first row as a Series
+    first_row = teacher_df.iloc[0]
 
-    return {name, age_range, gender, phone_number, description}
+    # Create the dictionary from the Series
+    return {
+        'Full Name': first_row['Full Name'],
+        'Age Range': first_row['Age Range'],
+        'Gender': first_row['Gender'],
+        'Phone Number': first_row['Phone Number'],
+        'Short Explanation': first_row['Short Explanation']
+    }
 
-
-student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
-                          description='struggles with geometry and functions')
-print(match_teacher(student1))
+#
+# student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
+#                           description='struggles with geometry and functions')
+# print(match_teacher(student1))
 
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
