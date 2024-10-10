@@ -25,7 +25,6 @@ def on_submit(input_name,input_gender,input_age,input_subject,input_short_explan
     window.destroy()
 
 
-
 name_str = tk.StringVar()
 tk.Label(text=f"Enter {key_values[0]}",font=('Calibri',20),background='lightblue').pack()
 input_name = tk.Entry(window, textvariable=name_str)
