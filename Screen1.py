@@ -13,7 +13,7 @@ def student_clicked():
 def create_teacher_button(root):
     button = Button(root,
                     text='Teacher',
-                    command=lambda :teacher_clicked(),
+                    command=lambda: teacher_clicked(),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -34,13 +34,13 @@ def create_teacher_button(root):
                     width=20,
                     wraplength=100)
 
-    button.pack(padx=100, pady=70)
+    button.pack(padx=100, pady=10)
 
 
 def create_student_button(root):
     button = Button(root,
                     text='Student',
-                    command=lambda :student_clicked(),
+                    command=lambda: student_clicked(),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -61,7 +61,7 @@ def create_student_button(root):
                     width=20,
                     wraplength=100)
 
-    button.pack(padx=100, pady=70)
+    button.pack(padx=100, pady=10)
 
 
 def create_screen_1():
@@ -70,25 +70,37 @@ def create_screen_1():
     root.title('Teach and Reach')
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     root.configure(background='lightblue')
+    create_welcome_text(root)
     create_student_button(root)
     create_teacher_button(root)
 
     root.mainloop()
 
 
-def open_teacher(root):
-    newWindow = Toplevel(root)
-    newWindow.title('Teach and Reach')
-    root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-    root.configure(background='lightblue')
-    Label(newWindow,
-          text="Hello Student").pack()
+def create_welcome_text(root):
+    text_var = StringVar()
+    text_var.set("Welcome to Teach and Reach!")
+    label = Label(root,
+                  textvariable=text_var,
+                  height=5,
+                  width=80,
+                  bd=1,
+                  background='lightblue',
+                  font=("calibri", 30, "bold"),
+                  fg="black",
+                  padx=2,
+                  pady=2,
+                  wraplength=300
+                  )
+
+    label.pack(pady=0)
 
 
-def open_student(root):
-    newWindow = Toplevel(root)
-    newWindow.title('Teach and Reach')
+def create_welcome_screen():
+    root = Tk()
+    root.title('Teach and Reach')
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     root.configure(background='lightblue')
-    Label(newWindow,
-          text="Hello Student").pack()
+    create_welcome_text(root)
+
+    root.mainloop()

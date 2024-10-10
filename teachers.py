@@ -61,21 +61,18 @@ def create_confirmation_text(root):
     label = Label(root,
                   textvariable=text_var,
                   anchor=CENTER,
-                  height=40,
-                  width=60,
-                  bd=3,
+                  height=10,
+                  width=100,
+                  bd=1,
                   background='lightblue',
-                  font=("calibri", 32, "bold"),
-                  cursor="hand2",
+                  font=("calibri", 40, "bold"),
                   fg="black",
-                  padx=15,
-                  pady=15,
-                  justify=CENTER,
-                  relief=RAISED,
-                  wraplength=250
+                  padx=10,
+                  pady=1,
+                  wraplength=400
                   )
 
-    label.pack(pady=20)
+    label.pack(pady=1)
 
 
 def create_confirmation_screen():
