@@ -3,7 +3,8 @@ from tkinter import *
 import Screen2
 
 
-def teacher_clicked():
+def teacher_clicked(root):
+    root.destroy()
     pass
 
 
@@ -15,7 +16,7 @@ def student_clicked(root):
 def create_teacher_button(root):
     button = Button(root,
                     text='Teacher',
-                    command=lambda: teacher_clicked(),
+                    command=lambda: teacher_clicked(root),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -24,7 +25,7 @@ def create_teacher_button(root):
                     cursor="hand2",
                     disabledforeground="gray",
                     fg="black",
-                    font=("Arial", 12),
+                    font=("Calibri", 16),
                     height=2,
                     highlightbackground="black",
                     highlightcolor="green",
@@ -51,7 +52,7 @@ def create_student_button(root):
                     cursor="hand2",
                     disabledforeground="gray",
                     fg="black",
-                    font=("Arial", 12),
+                    font=("Calibri", 16),
                     height=2,
                     highlightbackground="black",
                     highlightcolor="green",
@@ -66,6 +67,25 @@ def create_student_button(root):
     button.pack(padx=100, pady=10)
 
 
+def create_welcome_text(root):
+    text_var = StringVar()
+    text_var.set("Welcome to Teach and Reach!")
+    label = Label(root,
+                  textvariable=text_var,
+                  height=5,
+                  width=80,
+                  bd=1,
+                  background='lightblue',
+                  font=("Calibri", 32, "bold"),
+                  fg="black",
+                  padx=2,
+                  pady=2,
+                  wraplength=400
+                  )
+
+    label.pack(pady=0)
+
+
 def create_screen_1():
     root = Tk()
 
@@ -77,22 +97,3 @@ def create_screen_1():
     create_teacher_button(root)
 
     root.mainloop()
-
-
-def create_welcome_text(root):
-    text_var = StringVar()
-    text_var.set("Welcome to Teach and Reach!")
-    label = Label(root,
-                  textvariable=text_var,
-                  height=5,
-                  width=80,
-                  bd=1,
-                  background='lightblue',
-                  font=("calibri", 30, "bold"),
-                  fg="black",
-                  padx=2,
-                  pady=2,
-                  wraplength=300
-                  )
-
-    label.pack(pady=0)
