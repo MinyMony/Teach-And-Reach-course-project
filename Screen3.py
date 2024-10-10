@@ -60,7 +60,7 @@ def create_teacher_screen():
     exit_button.pack(pady=20)
     window.mainloop()
 
-create_teacher_screen()
+
 
 
 

@@ -65,5 +65,5 @@ def create_student_screen():
                                                        input_subject.get(), input_short_explanation.get(), window)))
     exit_button.pack(pady=20)
     window.mainloop()
-    print(student_data)
+
 

@@ -80,3 +80,12 @@ def create_confirmation_screen():
     create_confirmation_text(root)
 
     root.mainloop()
+
+def create_matching_teacher_screen():
+    root = Tk()
+    root.title('Teach and Reach')
+    root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+    root.configure(background='lightblue')
+
+
+    root.mainloop()
