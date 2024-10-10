@@ -3,6 +3,7 @@ from tkinter import *
 import consts
 import Screen1
 
+teachers_df = pd.DataFrame
 root = Tk()
 
 root.title('Teach and Reach')
