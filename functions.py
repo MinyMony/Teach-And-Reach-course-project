@@ -1,6 +1,7 @@
 import teachers
 import numpy as np
 from sentence_transformers import SentenceTransformer
+
 sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 
@@ -69,9 +70,11 @@ def match_teacher(student):
 def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
+
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
     return student
+
 
 # teacher has name, age_range, gender, phone_num, description
 def create_teacher(teacher_df):
@@ -82,6 +85,7 @@ def create_teacher(teacher_df):
     description = teacher_df.head(1)['Short Explanation']
 
     return {name, age_range, gender, phone_number, description}
+
 
 student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male',
                           description='struggles with geometry and functions')
