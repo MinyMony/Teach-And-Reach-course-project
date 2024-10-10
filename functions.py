@@ -75,3 +75,6 @@ def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
+def create_student(name, age, subject, gender, description):
+    student = {'name': name, 'age': age, 'subject': subject, 'gender': gender, 'description': description}
+    return student
