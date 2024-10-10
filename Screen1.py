@@ -1,15 +1,10 @@
 import consts
 from tkinter import *
 
-root = Tk()
-
-root.title('Teach and Reach')
-root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-root.configure(background='lightblue')
-
 
 def teacher_clicked():
-    return 'Teacher'
+    pass
+
 
 def student_clicked():
     return 'Student'
@@ -18,7 +13,7 @@ def student_clicked():
 def create_teacher_button(root):
     button = Button(root,
                     text='Teacher',
-                    command=teacher_clicked(),
+                    command=lambda :teacher_clicked(),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -45,7 +40,7 @@ def create_teacher_button(root):
 def create_student_button(root):
     button = Button(root,
                     text='Student',
-                    command=student_clicked(),
+                    command=lambda :student_clicked(),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -69,13 +64,19 @@ def create_student_button(root):
     button.pack(padx=100, pady=70)
 
 
-def create_screen_1(root):
+def create_screen_1():
+    root = Tk()
+
+    root.title('Teach and Reach')
+    root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+    root.configure(background='lightblue')
     create_student_button(root)
     create_teacher_button(root)
+
     root.mainloop()
 
 
-def open_teacher():
+def open_teacher(root):
     newWindow = Toplevel(root)
     newWindow.title('Teach and Reach')
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
@@ -84,11 +85,10 @@ def open_teacher():
           text="Hello Student").pack()
 
 
-def open_student():
+def open_student(root):
     newWindow = Toplevel(root)
     newWindow.title('Teach and Reach')
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     root.configure(background='lightblue')
     Label(newWindow,
           text="Hello Student").pack()
-
