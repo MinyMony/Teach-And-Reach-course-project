@@ -15,7 +15,8 @@ def text_box(dict):
     window.geometry("300x300")
     for key in dict:
         tk.Label(text=f"Enter {key}").pack()
-        tk.Entry().pack()
+        data= tk.StringVar()
+        input=tk.Entry(window)
     exit_button = tk.Button(window, text="Submit", command=window.destroy)
     exit_button.pack(pady=20)
     window.mainloop()
