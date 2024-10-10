@@ -2,9 +2,6 @@ import pandas as pd
 from tkinter import *
 import consts
 
-teachers_df = pd.DataFrame()
-
-
 # Creating a DataFrame for teachers
 # teachers_data = {
 #     'Full Name': ['Miriam Cohen', 'Yossi Levi', 'Dana Friedman', 'Oren Mizrahi', 'Shachar Rabinowitz',
@@ -31,7 +28,7 @@ teachers_df = pd.DataFrame()
 #     ]
 # }
 def addTeacher(full_name, gender, subject, age_range, phone_number, short_explanation):
-    global teachers_df
+    teachers_df = load_data()
 
     new_teacher = pd.Series({
         'Full Name': full_name,
