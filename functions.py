@@ -1,5 +1,5 @@
 import sys
-from teachers import teachers_df
+import teachers
 import nltk
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
@@ -24,7 +24,7 @@ def train_model():
 # teacher has name, age_range, gender, phone_num, description
 def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
-    teachers_dt = teachers_df.copy()
+    teachers_dt = teachers.load_data()
     teachers_dt = teachers_dt[teachers_dt['Subject'] == student['Subject']]
     teachers_dt = teachers_dt[
         teachers_dt['Age Range'].split('-')[0] <= student['Age'] and teachers_dt['Age Range'].split('-')[1] >= student[
@@ -76,6 +76,7 @@ def cosine(u, v):
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
     return student
+
 
 student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
 print (match_teacher(student1))
