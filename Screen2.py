@@ -29,27 +29,27 @@ def Screen2():
     window.configure(background='lightblue')
 
     name_str = tk.StringVar()
-    tk.Label(text=f"Enter {key_values[0]}").pack()
+    tk.Label(window,text=f"Enter {key_values[0]}").pack()
     input_name = tk.Entry(window, textvariable=name_str)
     input_name.pack()
 
     gender_str = tk.StringVar()
-    tk.Label(text=f"Enter {key_values[1]}").pack()
+    tk.Label(window,text=f"Enter {key_values[1]}").pack()
     input_gender = tk.Entry(window, textvariable=gender_str)
     input_gender.pack()
 
     age_int = tk.IntVar()
-    tk.Label(text=f"Enter {key_values[2]}").pack()
+    tk.Label(window,text=f"Enter {key_values[2]}").pack()
     input_age = tk.Entry(window, textvariable=age_int)
     input_age.pack()
 
     subject_str = tk.StringVar()
-    tk.Label(text=f"Enter {key_values[3]}").pack()
+    tk.Label(window,text=f"Enter {key_values[3]}").pack()
     input_subject = tk.Entry(window, textvariable=subject_str)
     input_subject.pack()
 
     short_explanation_str = tk.StringVar()
-    tk.Label(text=f"Enter {key_values[4]}").pack()
+    tk.Label(window,text=f"Enter {key_values[4]}").pack()
     input_short_explanation = tk.Entry(window, textvariable=short_explanation_str)
     input_short_explanation.pack()
 
