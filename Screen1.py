@@ -12,7 +12,6 @@ def student_clicked(root):
     Screen2.create_student_screen()
 
 
-
 def create_teacher_button(root):
     button = Button(root,
                     text='Teacher',
@@ -97,6 +96,3 @@ def create_welcome_text(root):
                   )
 
     label.pack(pady=0)
-
-
-
