@@ -16,6 +16,7 @@ def create_teacher_screen():
     window.configure(background='lightblue')
     window.title("Teachers Window")
 
+
     name_str = tk.StringVar()
     tk.Label(text=f"Enter {teachers_data[0]}", font=('Calibri', 20), background='lightblue').pack()
     input_name = tk.Entry(window, textvariable=name_str)
@@ -60,7 +61,6 @@ def create_teacher_screen():
     exit_button.pack(pady=20)
     window.mainloop()
 
-create_teacher_screen()
 
 
 
