@@ -1,25 +1,7 @@
 import teachers
 import numpy as np
 from sentence_transformers import SentenceTransformer
-
 sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
-
-
-def train_model():
-    sentences = ["I ate dinner.", "We had a three-course meal.", "Brad came to dinner with us.", "He loves fish tacos.",
-                 "In the end, we all felt like we ate too much.", "We all agreed; it was a magnificent evening."]
-
-    # Tokenization of each document
-    tokenized_sent = []
-    for s in sentences:
-        tokenized_sent.append(nltk.word_tokenize(s.lower()))
-
-    tagged_data = [TaggedDocument(d, [i]) for i, d in enumerate(tokenized_sent)]
-
-    model = Doc2Vec(tagged_data, vector_size=20, window=2, min_count=1, epochs=100)
-
-    return model
-
 
 # student has name, age, subject, gender, description
 # teacher has name, age_range, gender, phone_num, description
