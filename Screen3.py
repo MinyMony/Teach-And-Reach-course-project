@@ -21,6 +21,7 @@ def create_teacher_screen():
     tk.Label(text=f"Enter {teachers_data[0]}", font=('Calibri', 20), background='lightblue').pack()
     input_name = tk.Entry(window, textvariable=name_str)
     input_name.pack()
+    
 
     gender_str = tk.StringVar()
     input_gender = ttk.Combobox(window, textvariable=gender_str)
