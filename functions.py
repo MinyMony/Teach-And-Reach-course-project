@@ -2,7 +2,6 @@ import sys
 from teachers import teachers_df
 import nltk
 import numpy as np
-import math
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
 def train_model():
@@ -48,7 +47,7 @@ def match_teacher(student):
     min_cosine_similarity = sys.maxsize
     teacher_match_index = 0
 
-
+    # find the closest vectors
     for vector_i in range(len(vectorized_teachers_description)):
         cosine_similarity = cosine(vectorized_teachers_description[vector_i], vectorized_student_description)
         if cosine_similarity < min_cosine_similarity:
@@ -79,5 +78,5 @@ def create_student(name, age, subject, gender, description):
     student = {'name': name, 'age': age, 'subject': subject, 'gender': gender, 'description': description}
     return student
 
-student = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
-print (match_teacher(student))
+student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
+print (match_teacher(student1))

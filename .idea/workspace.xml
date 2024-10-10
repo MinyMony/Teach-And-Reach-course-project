@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="change teachers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screen1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen1.py" afterDir="false" />
+    <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="add create student function">
       <change beforePath="$PROJECT_DIR$/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/teachers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,15 +175,7 @@
       <option name="project" value="LOCAL" />
       <updated>1728544255749</updated>
     </task>
-    <task id="LOCAL‎-00007" summary="change teachers">
-      <option name="closed" value="true" />
-      <created>1728546114306</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL‎-00007" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1728546114306</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,8 +198,7 @@
     <MESSAGE value="add fontS to consts" />
     <MESSAGE value="add changing to tkinter screen" />
     <MESSAGE value="add create student function" />
-    <MESSAGE value="change teachers" />
-    <option name="LAST_COMMIT_MESSAGE" value="change teachers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add create student function" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teach_And_Reach$functions.coverage" NAME="functions Coverage Results" MODIFIED="1728544601217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
