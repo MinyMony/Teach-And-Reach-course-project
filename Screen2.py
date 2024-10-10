@@ -11,31 +11,32 @@ student_data = {
     'Subject': 0,
     'Short Explanation': 0
 }
-
 window = tk.Tk()
-window.geometry("300x300")
+window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+window.configure(background='lightblue')
+
 
 name_str = tk.StringVar()
 gender_str=tk.StringVar()
-age=tk.StringVar()
+age=tk.IntVar()
 subject=tk.StringVar()
 short_version=tk.StringVar()
 
 str_list=[name_str,gender_str,age,subject,short_version]
 
-def on_submit():
-    print(name_str.get())
+
+def on_submit(window, input):
+    print(str_list[i].get())
     window.destroy()
 
 
-i=0
 
 def text_box(dict):
-
+    for key in dict:
         tk.Label(text=f"Enter {key}").pack()
         input = tk.Entry(window, textvariable=name_str)
         input.pack()
-    exit_button = tk.Button(window, text="Submit", command=(lambda :on_submit()))
+    exit_button = tk.Button(window, text="Submit", command=(lambda :on_submit(str_list[i])))
     exit_button.pack(pady=20)
     window.mainloop()
 

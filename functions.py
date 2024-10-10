@@ -25,22 +25,21 @@ def train_model():
 def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers_df.copy()
-    teachers_dt = teachers_dt[teachers_dt['subject'] == student['subject']]
+    teachers_dt = teachers_dt[teachers_dt['Subject'] == student['Subject']]
     teachers_dt = teachers_dt[
-        teachers_dt['age_range'].split('-')[0] <= student['age'] and teachers_dt['age_range'].split('-')[1] >= student[
-            'age']]
+        teachers_dt['Age Range'].split('-')[0] <= student['Age'] and teachers_dt['Age Range'].split('-')[1] >= student[
+            'Age']]
 
     # by the description decide the most fitting teacher
-
     # first tokenise all the descriptions
-    tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_dt['description']]
-    tokenized_student_description = nltk.word_tokenize(student['description'])  # sentence vector
+    tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_dt['Short Explanation']]
+    tokenized_student_description = nltk.word_tokenize(student['Short Explanation'])  # sentence vector
 
     ## Train doc2vec model
     model = train_model()
 
     # transform sentence tokens to vectors
-    vectorized_teachers_description = [model.infer_vector(tokens) for tokens in teachers_dt['description']]
+    vectorized_teachers_description = [model.infer_vector(tokens) for tokens in tokenized_teacher_descriptions]
     vectorized_student_description = model.infer_vector(tokenized_student_description)
 
     # resetting parameters
@@ -75,7 +74,7 @@ def cosine(u, v):
 
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
 def create_student(name, age, subject, gender, description):
-    student = {'name': name, 'age': age, 'subject': subject, 'gender': gender, 'description': description}
+    student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
     return student
 
 student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
