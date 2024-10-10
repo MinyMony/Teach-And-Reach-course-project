@@ -20,7 +20,7 @@ def on_submit(input_name, input_gender, input_age, input_subject, input_short_ex
     window.destroy()
 
 
-def create_screen_2():
+def create_student_screen():
     window = tk.Tk()
     window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     window.configure(background='lightblue')

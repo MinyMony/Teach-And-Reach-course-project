@@ -4,6 +4,8 @@ import nltk
 nltk.download('punkt_tab')
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+from sentence_transformers import SentenceTransformer
+sbert_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 
 def train_model():
@@ -14,7 +16,6 @@ def train_model():
     tokenized_sent = []
     for s in sentences:
         tokenized_sent.append(nltk.word_tokenize(s.lower()))
-    print(tokenized_sent)
 
     tagged_data = [TaggedDocument(d, [i]) for i, d in enumerate(tokenized_sent)]
 
@@ -28,21 +29,24 @@ def train_model():
 def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers.load_data()
-    teachers_dt = teachers_dt[teachers_dt['Subject'] == student['Subject']]
-    student_age = int(student['Age'])
+    print(teachers_dt)
 
-    # Create a mask to filter the DataFrame
+    # filter the DataFrame
     mask = (
-        teachers_dt['Age Range'].str.split('-').apply(
-            lambda x: int(x[0]) <= student_age <= int(x[1])
-        )
+            teachers_dt['Age Range'].str.split('-').apply(
+                lambda x: int(x[0]) <= int(student['Age']) <= int(x[1])
+            )
+            & (teachers_dt['Subject'] == student['Subject'])
     )
 
     # Apply the mask to filter teachers_dt
     teachers_dt = teachers_dt[mask]
+    print(teachers_dt)
+
     teachers_descriptions = [str(desc) for desc in teachers_dt['Short Explanation']]
     student_description = str(student['Short Explanation'])
-    # by the description decide the most fitting teacher
+
+    # now match the best teacher for the student based on the short explanation
     # first tokenise all the descriptions
     tokenized_teacher_descriptions = [nltk.word_tokenize(desc.lower()) for desc in teachers_descriptions]
     tokenized_student_description = nltk.word_tokenize(student_description)  # sentence vector
@@ -50,13 +54,13 @@ def match_teacher(student):
     ## Train doc2vec model
     model = train_model()
 
-    # transform sentence tokens to vectors
-    vectorized_teachers_description = [model.infer_vector(tokens) for tokens in tokenized_teacher_descriptions]
+    # transform sentence tokens to vectors using the model
+    vectorized_teachers_description = [model.infer_vector(tokenized_sent) for tokenized_sent in tokenized_teacher_descriptions]
     vectorized_student_description = model.infer_vector(tokenized_student_description)
 
     # resetting parameters
     min_cosine_similarity = sys.maxsize
-    teacher_match_index = 0
+    teacher_match_index = -1
 
     # find the closest vectors
     for vector_i in range(len(vectorized_teachers_description)):
@@ -65,8 +69,12 @@ def match_teacher(student):
             min_cosine_similarity = cosine_similarity
             teacher_match_index = vector_i
 
-    print(student_description)
-    print(teachers_descriptions[teacher_match_index])
+    if teacher_match_index != -1:
+        print(student)
+        print(teachers_dt[teachers_dt['Short Explanation'] == teachers_descriptions[teacher_match_index]])
+    else:
+        print('could not match teacher')
+
 
 
 # def get_cosine(vec1, vec2):
@@ -92,5 +100,5 @@ def create_student(name, age, subject, gender, description):
     return student
 
 
-student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
-print(match_teacher(student1))
+student1 = create_student(name='Alex Johnson', age=14, subject='Math', gender='Male', description='struggles with geometry and functions')
+match_teacher(student1)
