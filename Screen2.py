@@ -67,4 +67,4 @@ def create_student_screen():
     window.mainloop()
 
 
-print(student_data)
+
