@@ -41,6 +41,7 @@ def addTeacher(full_name, gender, subject, age_range, phone_number, short_explan
 
     teachers_df = teachers_df.append(new_teacher, ignore_index=True)
     teachers_df.to_csv('teachers_data.csv', index=False)
+    create_confirmation_screen()
 
 
 def load_data():
@@ -78,7 +79,6 @@ def create_confirmation_screen():
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     root.configure(background='lightblue')
     create_confirmation_text(root)
-
     root.mainloop()
 
 def create_matching_teacher_screen():
