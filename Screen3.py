@@ -28,10 +28,15 @@ def create_teacher_screen():
     tk.Label(text=f"Enter {teachers_data[1]}", font=('Calibri', 20), background='lightblue').pack()
     input_gender.pack()
 
-    subject = tk.StringVar()
+    subject_str = tk.StringVar()
+    input_subject = ttk.Combobox(window, textvariable=subject_str)
+    input_subject['values'] = ('Math',
+                               'Science', 'Literature', 'History', 'Geography', 'Art', 'Music', 'Physics', 'Chemistry',
+                               'Geography')
     tk.Label(text=f"Enter {teachers_data[2]}", font=('Calibri', 20), background='lightblue').pack()
-    input_subject = tk.Entry(window, textvariable=subject)
+    # input_subject = tk.Entry(window, textvariable=subject_str)
     input_subject.pack()
+    # input_subject.pack()
 
     age_range = tk.StringVar()
     tk.Label(text=f"Enter {teachers_data[3]}", font=('Calibri', 20), background='lightblue').pack()
@@ -55,6 +60,7 @@ def create_teacher_screen():
     exit_button.pack(pady=20)
     window.mainloop()
 
+create_teacher_screen()
 
 
 
