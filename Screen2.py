@@ -10,7 +10,7 @@ def on_submit(input_name, input_gender, input_age, input_subject, input_short_ex
     window.destroy()
 
 
-def Screen2():
+def create_student_screen():
 
     student_data = {
         'Full Name': 0,

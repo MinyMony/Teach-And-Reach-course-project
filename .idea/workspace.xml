@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d698292-18e7-4725-8369-14593dfcfbcf" name="Changes" comment="fix filtering in functions">
+      <change beforePath="$PROJECT_DIR$/.idea/Teach-And-Reach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Teach-And-Reach.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screen1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screen2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Screen2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.functions">
+  <component name="RunManager">
     <configuration name="Screen1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Teach-And-Reach" />
       <option name="ENV_FILES" value="" />
