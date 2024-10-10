@@ -1,8 +1,8 @@
 from tkinter import ttk
 import consts
 import tkinter as tk
-
-
+import functions
+import teachers
 
 student_data = {
     'Full Name': 0,
@@ -39,6 +39,7 @@ def on_submit(input_name, input_gender, input_age, input_subject, input_short_ex
     for i in range(len(student_data)):
         student_data[key_values[i]] = list[i]
     window.destroy()
+    teachers.create_matching_teacher_screen(functions.match_teacher(student_data))
 
 
 def create_student_screen():

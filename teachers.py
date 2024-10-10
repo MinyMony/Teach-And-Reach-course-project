@@ -2,6 +2,7 @@ import pandas as pd
 from tkinter import *
 import consts
 
+
 # Creating a DataFrame for teachers
 # teachers_data = {
 #     'Full Name': ['Miriam Cohen', 'Yossi Levi', 'Dana Friedman', 'Oren Mizrahi', 'Shachar Rabinowitz',
@@ -81,11 +82,41 @@ def create_confirmation_screen():
     create_confirmation_text(root)
     root.mainloop()
 
-def create_matching_teacher_screen():
+
+def create_matching_teacher_screen(teacher):
     root = Tk()
     root.title('Teach and Reach')
     root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
     root.configure(background='lightblue')
 
-
+    if teacher is None:
+        create_not_found_text(root)
+    else:
+        show_teacher_details(teacher, root)
     root.mainloop()
+
+
+def create_not_found_text(root):
+    text_var = StringVar()
+    text_var.set("No Matching Teacher")
+    label = Label(root,
+                  textvariable=text_var,
+                  height=4,
+                  width=80,
+                  bd=1,
+                  background='lightblue',
+                  font=("Calibri", 30, "bold"),
+                  fg="black",
+                  padx=2,
+                  pady=2,
+                  wraplength=250
+                  )
+
+    label.pack(pady=2)
+
+
+# teacher has name, age_range, gender, phone_num, description
+def show_teacher_details(teacher, root):
+    Label(root, text=f'Teacher\'s name : {teacher['Full Name']}', font=('Calibri', 20), background='lightblue').pack(pady=20)
+    Label(root, text=f'Phone number : {teacher['Phone Number']}', font=('Calibri', 20), background='lightblue').pack(pady=20)
+    Label(root, text=f'Short explanation : {teacher['Short Explanation']}', font=('Calibri', 20), background='lightblue').pack(pady=20)
