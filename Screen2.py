@@ -62,4 +62,3 @@ window.mainloop()
 
 print(student_data)
 
-n
