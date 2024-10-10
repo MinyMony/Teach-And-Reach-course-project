@@ -1,3 +1,5 @@
+from numpy.version import short_version
+
 import consts
 import tkinter as tk
 
@@ -12,15 +14,15 @@ def on_submit(input_name, input_gender, input_age, input_subject, input_short_ex
 
 def Screen2():
 
-    student_data = {
-        'Full Name': 0,
+    teachers_data= {'Full Name': 0,
         'Gender': 0,
-        'Age': 0,
         'Subject': 0,
-        'Short Explanation': 0
-    }
+        'Age Range':0,
+        'Phone Number': 0,
+        'Short Explanation': 0}
 
-    key_values = list(student_data.keys())
+
+    key_values = list(teachers_data.keys())
 
     window = tk.Tk()
     window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
@@ -58,37 +60,4 @@ def Screen2():
     exit_button.pack(pady=20)
     window.mainloop()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(student_data)
