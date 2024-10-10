@@ -2,7 +2,7 @@ from tkinter import ttk
 import consts
 import tkinter as tk
 
-from functions import create_student
+
 
 student_data = {
     'Full Name': 0,
@@ -21,14 +21,14 @@ def create_student_text(window):
     label = tk.Label(window,
                      textvariable=text_var,
                      height=5,
-                     width=80,
+                     width=90,
                      bd=1,
                      background='lightblue',
-                     font=("Calibri", 32, "bold"),
+                     font=("Calibri", 30, "bold"),
                      fg="black",
                      padx=2,
                      pady=2,
-                     wraplength=200
+                     wraplength=300
                      )
 
     label.pack(pady=0)

@@ -11,18 +11,18 @@ def create_teacher_text(window):
     text_var.set("Hello Teacher! Enter your information")
     label = tk.Label(window,
                      textvariable=text_var,
-                     height=5,
+                     height=4,
                      width=80,
                      bd=1,
                      background='lightblue',
-                     font=("Calibri", 32, "bold"),
+                     font=("Calibri", 30, "bold"),
                      fg="black",
                      padx=2,
                      pady=2,
-                     wraplength=200
+                     wraplength=250
                      )
 
-    label.pack(pady=0)
+    label.pack(pady=2)
 
 
 def on_submit(input_name, input_gender, input_subject, input_age_range, input_phone_number, input_short_explanation,
