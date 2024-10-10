@@ -12,9 +12,9 @@ student_data = {
 
 def text_box(dict):
     window = tk.Tk()
-    window.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
+    window.geometry("300x300")
     for key in dict:
-        tk.Label(text=f"Enter {key}",font=('Calibri,15')).pack()
+        tk.Label(text=f"Enter {key}").pack()
         data= tk.StringVar()
         input=tk.Entry(window)
     exit_button = tk.Button(window, text="Submit", command=window.destroy)
