@@ -1,4 +1,4 @@
-import pygame
+
 
 BLUE = (33, 49, 128)
 WHITE = (255, 255, 255, 255)
