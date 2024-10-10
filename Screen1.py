@@ -7,8 +7,10 @@ def teacher_clicked():
     pass
 
 
-def student_clicked():
+def student_clicked(root):
+    root.destroy()
     Screen2.Screen2()
+
 
 
 def create_teacher_button(root):
@@ -41,7 +43,7 @@ def create_teacher_button(root):
 def create_student_button(root):
     button = Button(root,
                     text='Student',
-                    command=lambda: student_clicked(),
+                    command=lambda: student_clicked(root),
                     activebackground='blue',
                     activeforeground="white",
                     anchor="center",
@@ -97,11 +99,4 @@ def create_welcome_text(root):
     label.pack(pady=0)
 
 
-def create_welcome_screen():
-    root = Tk()
-    root.title('Teach and Reach')
-    root.geometry(f'{consts.WINDOW_WIDTH}x{consts.WINDOW_HEIGHT}')
-    root.configure(background='lightblue')
-    create_welcome_text(root)
 
-    root.mainloop()
