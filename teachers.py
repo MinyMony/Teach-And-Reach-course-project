@@ -45,7 +45,7 @@ def addTeacher(full_name, gender, subject, age_range, phone_number, short_explan
 
 
 def load_data():
-    teachers_df = pd.DataFrame('teachers_data.csv')
+    teachers_df = pd.read_csv('teachers_data.csv')
     return teachers_df
 
 

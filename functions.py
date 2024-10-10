@@ -26,9 +26,17 @@ def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers.load_data()
     teachers_dt = teachers_dt[teachers_dt['Subject'] == student['Subject']]
-    teachers_dt = teachers_dt[
-        teachers_dt['Age Range'].split('-')[0] <= student['Age'] and teachers_dt['Age Range'].split('-')[1] >= student[
-            'Age']]
+    student_age = int(student['Age'])
+
+    # Create a mask to filter the DataFrame
+    mask = (
+        teachers_dt['Age Range'].str.split('-').apply(
+            lambda x: int(x[0]) <= student_age <= int(x[1])
+        )
+    )
+
+    # Apply the mask to filter teachers_dt
+    teachers_dt = teachers_dt[mask]
 
     # by the description decide the most fitting teacher
     # first tokenise all the descriptions
