@@ -2,6 +2,7 @@ import Screen1
 import consts
 from tkinter import *
 
+#create screen 1
 root = Tk()
 
 root.title('Teach and Reach')
@@ -10,8 +11,5 @@ root.configure(background='lightblue')
 
 Screen1.create_student_button(root)
 Screen1.create_teacher_button(root)
-
-# הערהאחרת
-
 
 root.mainloop()
