@@ -4,6 +4,7 @@ import nltk
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
+
 def train_model():
     sentences = ["I ate dinner.", "We had a three-course meal.", "Brad came to dinner with us.", "He loves fish tacos.",
                  "In the end, we all felt like we ate too much.", "We all agreed; it was a magnificent evening."]
@@ -20,15 +21,24 @@ def train_model():
 
     return model
 
+
 # student has name, age, subject, gender, description
 # teacher has name, age_range, gender, phone_num, description
 def match_teacher(student):
     # filter the teachers that don't qualify - subject and age
     teachers_dt = teachers.load_data()
     teachers_dt = teachers_dt[teachers_dt['Subject'] == student['Subject']]
-    teachers_dt = teachers_dt[
-        teachers_dt['Age Range'].split('-')[0] <= student['Age'] and teachers_dt['Age Range'].split('-')[1] >= student[
-            'Age']]
+    student_age = int(student['Age'])
+
+    # Create a mask to filter the DataFrame
+    mask = (
+        teachers_dt['Age Range'].str.split('-').apply(
+            lambda x: int(x[0]) <= student_age <= int(x[1])
+        )
+    )
+
+    # Apply the mask to filter teachers_dt
+    teachers_dt = teachers_dt[mask]
 
     # by the description decide the most fitting teacher
     # first tokenise all the descriptions
@@ -72,6 +82,7 @@ def match_teacher(student):
 def cosine(u, v):
     return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
+
 # https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/
 def create_student(name, age, subject, gender, description):
     student = {'Name': name, 'Age': age, 'Subject': subject, 'Gender': gender, 'Short Explanation': description}
@@ -79,4 +90,4 @@ def create_student(name, age, subject, gender, description):
 
 
 student1 = create_student('Shahar', 18, 'Math', 'Female', 'Struggles with functions and trigonometry')
-print (match_teacher(student1))
+print(match_teacher(student1))
