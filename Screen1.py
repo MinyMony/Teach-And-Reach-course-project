@@ -1,5 +1,6 @@
 import consts
 from tkinter import *
+import Screen2
 
 
 def teacher_clicked():
@@ -7,7 +8,7 @@ def teacher_clicked():
 
 
 def student_clicked():
-    return 'Student'
+    Screen2.Screen2()
 
 
 def create_teacher_button(root):
